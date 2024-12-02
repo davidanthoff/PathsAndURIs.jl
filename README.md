@@ -3,7 +3,8 @@
 A different take on types for URIs (and also a Path type, that should probably eventually move into its own repo).
 
 This is more of an experiment at the moment and _not_ production ready. It might eventually be picked up by the language
-server, where the kind of functionality here would be very useful.
+server, where the kind of functionality here would be very useful (and a slightly less developed version of this is already
+used internally).
 
 ## Overview
 
