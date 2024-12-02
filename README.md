@@ -9,8 +9,8 @@ used internally).
 ## Overview
 
 The core idea is that for different situations different memory layouts for storing a URI a preferable. So this package
-provides an abstract type `AbstractURI` that represents an URI, and then two different concrete types that can be
-used to store an URI, where each of these two types has a different memory layout.
+provides an abstract type `AbstractURI` that represents a URI, and then two different concrete types that can be
+used to store a URI, where each of these two types has a different memory layout.
 
 `URI` stores a URI as a percent encoded string. If the goal is to for example use an URI as a key in a dict, or a similar
 design, then this can be be a good choice. The downside of this format is that accessing individual parts is expensive:
