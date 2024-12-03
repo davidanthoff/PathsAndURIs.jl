@@ -1,4 +1,4 @@
-module URIs2
+module PathsAndURIs
 
 export AbstractURI, URI, URIParts, @uri_str, Path, @path_str, scheme, authority, path, query, fragment
 

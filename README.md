@@ -1,6 +1,6 @@
-# URIs2
+# PathsAndURIs.jl
 
-A different take on types for URIs (and also a Path type, that should probably eventually move into its own repo).
+A different take on types for URIs and paths.
 
 This is more of an experiment at the moment and _not_ production ready. It might eventually be picked up by the language
 server, where the kind of functionality here would be very useful (and a slightly less developed version of this is already
@@ -22,6 +22,5 @@ when indvidual parts need to be accessed repeatedly, as no parsing or decoding n
 this representation puts more stress on the memory system, as each URI requires multiple strings to be stored.
 
 The package also has a type `Path` that stores a filesystem path, plus a flag whether the path is a Windows path or not.
-This type should probably eventually moved into a Paths.jl (or similar) package, but for now it lives here as well.
 The path itself is simply stored as a `String`. The main use case is that it becomes easy to convert between a URI with
 the `file` scheme a filesystem paths.
