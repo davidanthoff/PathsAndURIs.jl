@@ -1,4 +1,4 @@
-function Path(uri::AbstractURI, windows=false)
+function Paths.Path(uri::AbstractURI, windows=false)
     uri_parts = URIParts(uri)
     
     if scheme(uri_parts) != "file"
@@ -26,14 +26,10 @@ function Path(uri::AbstractURI, windows=false)
         value = replace(value, '/' => '\\')
     end
 
-    return Path(value)
+    return Paths.Path(value)
 end
 
-Base.isabspath(path::Path) = isabspath(path._inner)
-Base.normpath(path::Path) = Path(normpath(path._inner), Sys.iswindows(path))
-Sys.iswindows(path::Path) = path._windows
-
-function URIParts(path::Path)
+function URIParts(path::Paths.Path)
     isabspath(path) || throw(ArgumentError("Relative path `$path` is not valid."))
 
     if Sys.iswindows(path)
@@ -61,14 +57,7 @@ function URIParts(path::Path)
     return URIParts(scheme="file", authority=authority, path=path_as_string)
 end
 
-function URI(path::Path)
+function URI(path::Paths.Path)
     return URI(URIParts(path))
 end
 
-function Base.string(path::Path)
-    return path._inner
-end
-
-macro path_str(ex)
-    return Path(ex)
-end

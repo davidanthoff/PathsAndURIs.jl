@@ -22,15 +22,3 @@ struct URIParts <: AbstractURI
     _query::Union{String,Nothing}
     _fragment::Union{String,Nothing}
 end
-
-"""
-A file system path
-"""
-struct Path
-    _inner::String
-    _windows::Bool
-
-    function Path(path::String, windows::Union{Bool,Nothing}=nothing)
-        return new(path, something(windows, true))
-    end
-end
