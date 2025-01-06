@@ -1,7 +1,7 @@
 """
 A file system path
 """
-struct Path
+struct Path <: AbstractPath
     _inner::SubString{String}
     _windows::Bool
 

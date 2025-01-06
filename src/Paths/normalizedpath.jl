@@ -2,7 +2,7 @@
 """
 A normalized file system path
 """
-struct NormalizedPath
+struct NormalizedPath <: AbstractPath
     _inner::Path
 
     function NormalizedPath(path::String, windows::Union{Bool,Nothing}=nothing)
